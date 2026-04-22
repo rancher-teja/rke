@@ -1,26 +1,27 @@
 module github.com/rancher/rke
 
-go 1.23.0
+go 1.26
 
-toolchain go1.23.6
+toolchain go1.26.0
 
 replace (
 	github.com/knative/pkg => github.com/rancher/pkg v0.0.0-20190514055449-b30ab9de040e
 	// Replace some k8s modules with specific versions to get rid of the "unknown revision v0.0.0" error caused by the k8s.io/kubernetes module
 	// Upstream Issue: https://github.com/kubernetes/kubernetes/issues/79384
-	k8s.io/cloud-provider => k8s.io/cloud-provider v0.32.1
-	k8s.io/cluster-bootstrap => k8s.io/cluster-bootstrap v0.32.1
-	k8s.io/controller-manager => k8s.io/controller-manager v0.32.1
-	k8s.io/csi-translation-lib => k8s.io/csi-translation-lib v0.32.1
-	k8s.io/dynamic-resource-allocation => k8s.io/dynamic-resource-allocation v0.32.1
-	k8s.io/endpointslice => k8s.io/endpointslice v0.32.1
-	k8s.io/kube-controller-manager => k8s.io/kube-controller-manager v0.32.1
-	k8s.io/kube-proxy => k8s.io/kube-proxy v0.32.1
-	k8s.io/kube-scheduler => k8s.io/kube-scheduler v0.32.1
-	k8s.io/kubelet => k8s.io/kubelet v0.32.1
-	k8s.io/legacy-cloud-providers => k8s.io/legacy-cloud-providers v0.32.1
-	k8s.io/mount-utils => k8s.io/mount-utils v0.32.1
-	k8s.io/sample-apiserver => k8s.io/sample-apiserver v0.32.1
+	github.com/rancher/norman => github.com/rancher/norman v0.9.3-0.20260422052120-0d3c42580dd0
+	k8s.io/cloud-provider => k8s.io/cloud-provider v0.36.0
+	k8s.io/cluster-bootstrap => k8s.io/cluster-bootstrap v0.36.0
+	k8s.io/controller-manager => k8s.io/controller-manager v0.36.0
+	k8s.io/csi-translation-lib => k8s.io/csi-translation-lib v0.36.0
+	k8s.io/dynamic-resource-allocation => k8s.io/dynamic-resource-allocation v0.36.0
+	k8s.io/endpointslice => k8s.io/endpointslice v0.36.0
+	k8s.io/kube-controller-manager => k8s.io/kube-controller-manager v0.36.0
+	k8s.io/kube-proxy => k8s.io/kube-proxy v0.36.0
+	k8s.io/kube-scheduler => k8s.io/kube-scheduler v0.36.0
+	k8s.io/kubelet => k8s.io/kubelet v0.36.0
+	k8s.io/legacy-cloud-providers => k8s.io/legacy-cloud-providers v0.36.0
+	k8s.io/mount-utils => k8s.io/mount-utils v0.36.0
+	k8s.io/sample-apiserver => k8s.io/sample-apiserver v0.36.0
 	sigs.k8s.io/json => sigs.k8s.io/json v0.0.0-20211208200746-9f7c6b3444d2
 )
 
