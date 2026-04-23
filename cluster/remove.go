@@ -100,7 +100,7 @@ func (c *Cluster) RemoveOldNodes(ctx context.Context) error {
 				}
 			}
 			if err := k8s.DeleteNode(kubeClient, node.Name, nodeAddress, c.CloudProvider.Name); err != nil {
-				log.Warnf(ctx, "Failed to delete old node [%s] from kubernetes")
+				log.Warnf(ctx, "Failed to delete old node [%s] from kubernetes", node.Name)
 			}
 		}
 	}

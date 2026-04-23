@@ -48,7 +48,7 @@ func (c *Cluster) SnapshotEtcd(ctx context.Context, snapshotName string) error {
 		log.Warnf(ctx, "[etcd] Failed to take snapshot on all etcd hosts: %s", snapshotErr)
 		return fmt.Errorf("[etcd] Failed to take snapshot on all etcd hosts: %s", snapshotErr)
 	} else if snapshotFailures > 0 {
-		log.Warnf(ctx, "[etcd] Failed to take snapshot on %s etcd hosts", snapshotFailures)
+		log.Warnf(ctx, "[etcd] Failed to take snapshot on %d etcd hosts", snapshotFailures)
 	} else {
 		log.Infof(ctx, "[etcd] Finished saving snapshot [%s] on all etcd hosts", snapshotName)
 	}
@@ -61,7 +61,7 @@ func (c *Cluster) SnapshotEtcd(ctx context.Context, snapshotName string) error {
 		log.Warnf(ctx, "[etcd] Failed to upload etcd snapshot file to s3 on all etcd hosts")
 		return fmt.Errorf("[etcd] Failed to upload etcd snapshot file to s3 on all etcd hosts")
 	} else if s3UploadFailures > 0 {
-		log.Warnf(ctx, "[etcd] Failed to upload etcd snapshot file to s3 on %s etcd hosts", s3UploadFailures)
+		log.Warnf(ctx, "[etcd] Failed to upload etcd snapshot file to s3 on %d etcd hosts", s3UploadFailures)
 	} else {
 		log.Infof(ctx, "[etcd] Finished uploading etcd snapshot file to s3 on all etcd hosts")
 	}
